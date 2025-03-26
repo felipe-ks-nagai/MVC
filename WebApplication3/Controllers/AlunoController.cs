@@ -30,6 +30,7 @@ namespace WebApplication3.Controllers
             return View((Session["ListaAluno"] as List<Aluno>).ElementAt(id));
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
             return View(new Aluno());
