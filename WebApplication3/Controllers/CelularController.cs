@@ -16,11 +16,46 @@ namespace WebApplication3.Controllers
         }
         public ActionResult Listar()
         {
-            return View(Celular.GerarLista());
+            Celular.GerarLista(Session);
+            return View(Session["ListaCelular"] as List<Celular>);
         }
         public ActionResult Exibir(int id)
         {
-            return View(Celular.GerarLista().ElementAt(id));
+            return View((Session["ListaCelular"] as List<Celular>).ElementAt(id));
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View((Session["ListaCelular"] as List<Celular>).ElementAt(id));
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Celular());
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            return View((Session["ListaCelular"] as List<Celular>).ElementAt(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Celular celular)
+        {
+            Celular.Procurar(Session, id)?.Excluir(Session);
+            return RedirectToAction("Listar");
+        }
+        public ActionResult Create(Celular celular)
+        {
+            celular.Adicionar(Session);
+            return RedirectToAction("Listar");
+        }
+
+        public ActionResult Edit(int id, Celular celular)
+        {
+            Celular.Procurar(Session, id)?.Editar(Session, celular, id);
+            return RedirectToAction("Listar");
         }
     }
 }
