@@ -5,7 +5,7 @@
 }
 <h2>Listar</h2>
 <p>
-    @Html.ActionLink("Criar Novo", "Create")
+    @Html.ActionLink("Criar Novo", "Create", null, null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -27,9 +27,9 @@
             @Html.DisplayFor(modelItem => item.RA)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item) }) |
-            @Html.ActionLink("Exibir detalhes", "Exibir", new { id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item) }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item)  })
+            @Html.ActionLink("Editar", "Edit", new { id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item) }, new { @class = "btn btn-success" }) 
+            @Html.ActionLink("Detalhes", "Exibir", new { id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item) }, new { @class = "btn btn-secondary" }) 
+            @Html.ActionLink("Deletar", "Delete", new {  id=Model.ToList<WebApplication3.Models.Aluno>().IndexOf(item)  }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
