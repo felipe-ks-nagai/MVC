@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de alunos</h5>
+                        <p class="card-text">Lista de alunos para visualizar, editar, excluir e adicionar</p>
+                        @Html.ActionLink("Clique aqui", "Listar", "Aluno", new { area = "" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de Carros</h5>
+                        <p class="card-text">Lista de carros para visualizar, editar, excluir e adicionar</p>
+                        @Html.ActionLink("Clique aqui", "Listar", "Carro", new { area = "" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de celular</h5>
+                        <p class="card-text">Lista de celulares para visualizar, editar, excluir e adicionar</p>
+                        @Html.ActionLink("Clique aqui", "Listar", "Celular", new { area = "" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de evento</h5>
+                        <p class="card-text">Lista de eventos para visualizar, editar, excluir e adicionar</p>
+                        @Html.ActionLink("Clique aqui", "Listar", "Evento", new { area = "" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</main>
