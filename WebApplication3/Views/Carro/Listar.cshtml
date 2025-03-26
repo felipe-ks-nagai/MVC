@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Cor)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id = Model.ToList<WebApplication3.Models.Carro>().IndexOf(item)}, new { @class = "btn btn-secondary" } ) 
+            @Html.ActionLink("Editar", "Edit", new { id = Model.ToList<WebApplication3.Models.Carro>().IndexOf(item)}, new { @class = "btn btn-success" } ) 
             @Html.ActionLink("Detalhes", "Exibir", new {  id=Model.ToList<WebApplication3.Models.Carro>().IndexOf(item) }, new { @class = "btn btn-secondary" }) 
             @Html.ActionLink("Deletar", "Delete", new { id = Model.ToList<WebApplication3.Models.Carro>().IndexOf(item) }, new { @class = "btn btn-danger" })
         </td>
