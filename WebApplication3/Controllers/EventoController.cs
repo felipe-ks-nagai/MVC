@@ -26,7 +26,7 @@ namespace WebApplication3.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View((Session["ListaEvento"] as List<Carro>).ElementAt(id));
+            return View((Session["ListaEvento"] as List<Evento>).ElementAt(id));
         }
 
         [HttpGet]
